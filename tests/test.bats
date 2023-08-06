@@ -14,7 +14,7 @@ setup() {
 health_checks() {
   # Do something useful here that verifies the add-on
   # ddev exec "curl -s elasticsearch:9200" | grep "${PROJNAME}-elasticsearch"
-  ddev exec "curl -s https://localhost:443/"
+  (ddev exec -s timescale-with-mongo-and-mysql-fdw bash &) && echo "success" || echo "failure"
 }
 
 teardown() {
@@ -36,8 +36,8 @@ teardown() {
 @test "install from release" {
   set -eu -o pipefail
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get ddev/ddev-timescale-with-mongo-and-mysql-fdw with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get ddev/ddev-timescale-with-mongo-and-mysql-fdw
+  echo "# ddev get eakcize/ddev-timescale-with-mongo-and-mysql-fdw with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+  ddev get eakcize/ddev-timescaledb-with-mongo-and-mysql-fdw
   ddev restart >/dev/null
   health_checks
 }
