@@ -1,7 +1,7 @@
 {
   "name": "ddev-timescaledb-with-mongo-and-mysql-fdw",
   "version": "1.0.0",
-  "description": "[![tests](https://github.com/ddev/ddev-timescale-with-mongo-and-mysql-fdw/actions/workflows/tests.yml/badge.svg)](https://github.com/ddev/ddev-timescale-with-mongo-and-mysql-fdw/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)",
+  "description": "[![tests](https://github.com/eakcize/ddev-timescale-with-mongo-and-mysql-fdw/actions/workflows/tests.yml/badge.svg)](https://github.com/eakcize/ddev-timescale-with-mongo-and-mysql-fdw/actions/workflows/tests.yml) ![project is maintained](https://img.shields.io/maintenance/yes/2024.svg)",
   "main": "index.js",
   "directories": {
     "test": "tests"
