@@ -36,8 +36,8 @@ teardown() {
 @test "install from release" {
   set -eu -o pipefail
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get eakcize/ddev-timescale-with-mongo-and-mysql-fdw with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get eakcize/ddev-timescaledb-with-mongo-and-mysql-fdw
+  echo "# ddev get eakcize/ddev-timescaledb-with-mongo-and-mysql-fdw with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+  ddev get https://github.com/eakcize/ddev-timescaledb-with-mongo-and-mysql-fdw/archive/refs/tags/v1.0.0.tar.gz
   ddev restart >/dev/null
   health_checks
 }
