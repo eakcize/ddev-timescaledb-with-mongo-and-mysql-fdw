@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Build Docker image and Release"]
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -18,7 +22,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create Github Release
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           cache: npm
