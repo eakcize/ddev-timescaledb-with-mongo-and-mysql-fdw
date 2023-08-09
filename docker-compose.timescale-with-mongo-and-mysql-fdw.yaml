@@ -6,6 +6,8 @@ services:
     image: pajserb0y/timescale-with-mongo-fdw-and-mysql-fdw:latest
     # command: tail -f /dev/null
     networks: [default, ddev_default]
+    ports:
+      - "5433:5432"
     restart: "no"
     # These labels ensure this service is discoverable by ddev.
     labels:
